@@ -24,9 +24,6 @@ class MainMenuState extends MusicBeatState
 	private final optionShit:Array<String> = [
 		'story mode',
 		'freeplay',
-		#if FUTURE_POLYMOD
-		'mods',
-		#end
 		'credits',
 		'options'
 	];
@@ -83,7 +80,7 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 		{
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 140) + (108 - (Math.max(optionShit.length, 4) - 4) * 80));
+			var menuItem:FlxSprite = new FlxSprite(0, (i * 120) + (96 - (Math.max(optionShit.length, 2) - 1) * 10));
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/' + optionShit[i] + '/spritesheet');
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
