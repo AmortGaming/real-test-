@@ -69,10 +69,10 @@ class StoryMenuState extends MusicBeatState
 				loadedWeeks.push(weekFile);
 				loadedWeekList.push(Week.weeksList[i]);
 
-				var weekThing:StoryItem = new StoryItem(0, 466, Week.weeksList[i]);
-				weekThing.y += ((weekThing.height + 20) * i);
+				var weekThing:StoryItem = new StoryItem(1, -100, Week.weeksList[i]);
+				weekThing.y += ((weekThing.height + 10) * i);
 				weekThing.targetY = i;
-				weekThing.screenCenter(X);
+				weekThing.x += 750;
 				grpWeekText.add(weekThing);
 
 				if (isLocked)
@@ -149,12 +149,12 @@ class StoryMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));
+		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.8));
 
-		scoreText.text = "WEEK SCORE:" + lerpScore;
+		scoreText.text = "WEEK BRUH:" + lerpScore;
 
 		txtWeekTitle.text = loadedWeeks[curWeek].name.toUpperCase();
-		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);
+		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 5);
 
 		difficultySelectors.visible = !weekIsLocked(loadedWeekList[curWeek]);
 
@@ -264,13 +264,13 @@ class StoryMenuState extends MusicBeatState
 		{
 			case 0:
 				sprDifficulty.animation.play('easy');
-				sprDifficulty.offset.x = 20;
+				sprDifficulty.offset.x = 40;
 			case 1:
 				sprDifficulty.animation.play('normal');
-				sprDifficulty.offset.x = 70;
+				sprDifficulty.offset.x = 90;
 			case 2:
 				sprDifficulty.animation.play('hard');
-				sprDifficulty.offset.x = 20;
+				sprDifficulty.offset.x = 50;
 		}
 
 		sprDifficulty.alpha = 0;
@@ -299,7 +299,7 @@ class StoryMenuState extends MusicBeatState
 			if (item.targetY == 0 && !weekIsLocked(loadedWeekList[curWeek]))
 				item.alpha = 1;
 			else
-				item.alpha = 0.6;
+				item.alpha = 0.3;
 			bullShit++;
 		}
 
@@ -329,7 +329,7 @@ class StoryMenuState extends MusicBeatState
 
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 		txtTracklist.screenCenter(X);
-		txtTracklist.x -= FlxG.width * 0.35;
+		txtTracklist.x -= FlxG.width * 0.25;
 		txtTracklist.text += "\n";
 
 		intendedScore = HighScore.getWeekScore(loadedWeekList[curWeek], curDifficulty).score;
