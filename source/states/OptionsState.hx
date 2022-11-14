@@ -15,6 +15,7 @@ class OptionsState extends MusicBeatState
 	public static var fromPause:Bool = false;
 
 	private final options:Array<String> = [
+                'Gameplay',
 		'Preferences',
 		'Mobile Controls',
 		'Exit'
