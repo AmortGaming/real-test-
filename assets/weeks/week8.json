@@ -1,0 +1,50 @@
+{
+	"songs": [
+		[
+			"bruh",
+			"gf",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"obama",
+			"pico",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"negar",
+			"mom",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "tank",
+	"difficulties": "",
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "vs Heallan",
+	"weekName": "what?",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}
